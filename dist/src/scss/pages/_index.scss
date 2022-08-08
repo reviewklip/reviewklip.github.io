@@ -110,16 +110,16 @@ header {
         padding-left: 30px;
         transition: 0.3s all linear;
         &:focus{
-            border-color: #ff3251;
+            border-color: #49a5ff;
         }
     }
 
     button {
         width: 175px;
         height: 70px;
-        border: 1px solid #FF3251;
+        border: 1px solid #49a5ff;
         border-radius: 40px;
-        background-color: #FF3251;
+        background-color: #49a5ff;
         color: #fff;
         font-size: 20px;
         font-weight: 500;
