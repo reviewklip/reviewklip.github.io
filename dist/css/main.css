@@ -75,7 +75,7 @@ header .social-icon a {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #74797d;
   color: #fff;
   font-size: 20px;
   text-decoration: none;
@@ -84,8 +84,8 @@ header .social-icon a {
 }
 
 header .social-icon a:hover {
-  border-color: #ff3251;
-  background-color: #ff3251;
+  border-color: #74797d;
+  background-color: #dadada;
 }
 
 .has-line {
