@@ -11,6 +11,8 @@
     <link rel="icon" type="image/png" href="dist/src/images/favicon.ico"/>
     <!-- Theme CSS Link -->
     <link rel="stylesheet" href="dist/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <title>Review Klip</title>
 
@@ -72,11 +74,13 @@
                         <h1 style="font-size: 30px; line-height: 1.5;">
                             Want to start earning your passive income?<br/> Get early access when we launch.
                         </h1>
-                        <form action="#">
+                        <form action="#" id="email_form">
                             <div class="form-group">
-                                <input type="email" placeholder="Enter your email">
-                                
+                                <input type="email" placeholder="Enter your email" required="true" id="email">
                             </div>
+                            <!-- <div class="form-group"> -->
+                                <span style="color: green; display: none;" id="success_note">Thank you so much for joining the Reviewklip waitlist!</span>
+                            <!-- </div> -->
                             <div class="form-group">
                                 <button type="submit" style="background-color: #49a5ff;border: 1px solid #49a5ff;">Notify me</button>
                             </div>
@@ -93,6 +97,27 @@
         </section>
         <!-- Only Mobile View Ends Here -->
     </section>
+
+    <script>
+        $("#email_form").submit(function(e){
+            e.preventDefault();
+            var settings = {
+                "url": "http://ec2-13-232-174-71.ap-south-1.compute.amazonaws.com:3002/subscriptions",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                },
+                "data": JSON.stringify({
+                    "email": $("#email").val()
+                }),
+            };
+
+            $.ajax(settings).done(function (response) {
+                $("#success_note").show();
+            });
+        })
+    </script>
 </body>
 
 </html>
