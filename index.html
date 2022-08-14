@@ -132,9 +132,7 @@
 
             $.ajax(settings).done(function (response) {
                 $("#success_note").show();
-                mixpanel.track('Sign Up', {
-                    'email': $("#email").val(),
-                });
+                mixpanel.track('Sign Up');
             });
         })
     </script>
