@@ -132,6 +132,7 @@
 
             $.ajax(settings).done(function (response) {
                 $("#success_note").show();
+                $("#email").val("");
                 mixpanel.track('Sign Up');
             });
         })
