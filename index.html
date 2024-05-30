@@ -134,26 +134,33 @@
     <script>
         $("#email_form").submit(function(e){
             e.preventDefault();
-            var settings = {
-                "url": "https://api.reviewklip.com/subscriptions",
-                "method": "POST",
-                "timeout": 0,
-                "headers": {
-                    "Content-Type": "application/json",
-                },
-                "data": JSON.stringify({
-                    "email": $("#email").val()
-                }),
-            };
+            // var settings = {
+            //     "url": "https://api.reviewklip.com/subscriptions",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "headers": {
+            //         "Content-Type": "application/json",
+            //     },
+            //     "data": JSON.stringify({
+            //         "email": $("#email").val()
+            //     }),
+            // };
 
-            $.ajax(settings).done(function (response) {
-                $("#success_note").show();
-                mixpanel.track(
-                    'Sign Up',  
-                    {"email": $("#email").val()}
-                );
-                $("#email").val("");
-            });
+            // $.ajax(settings).done(function (response) {
+            //     $("#success_note").show();
+            //     mixpanel.track(
+            //         'Sign Up',  
+            //         {"email": $("#email").val()}
+            //     );
+            //     $("#email").val("");
+            // });
+
+            $("#success_note").show();
+            mixpanel.track(
+                'Sign Up',  
+                {"email": $("#email").val()}
+            );
+            $("#email").val("");
         })
     </script>
 </body>
